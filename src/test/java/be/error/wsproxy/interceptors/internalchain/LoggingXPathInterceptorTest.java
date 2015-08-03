@@ -115,9 +115,11 @@ public class LoggingXPathInterceptorTest {
 		Assert.assertEquals(loggingEvent.getLevel(), Level.ERROR);
 		Assert.assertEquals(
 				loggingEvent.getMessage().toString(),
-				"SID:{http://service.error.be}SomeService Payload:<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>"
+				"SID:{http://service.error.be}SomeService Payload:<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
 						+ "<service:SomeService xmlns:service=\"http://service.error.be\"><FirstElement><FirstElementFirstChild>"
 						+ "val</FirstElementFirstChild></FirstElement><SecondElement>123</SecondElement></service:SomeService>");
+		
+//		"SID:{http://service.error.be}SomeService Payload:<?xml version=\"1.0\" encoding=\"UTF-8\"?><service:SomeService xmlns:service="http://service.error.be"><FirstElement><FirstElementFirstChild>val</FirstElementFirstChild></FirstElement><SecondElement>123</SecondElement></service:SomeService>
 	}
 
 	/**
@@ -155,7 +157,7 @@ public class LoggingXPathInterceptorTest {
 		Assert.assertEquals(loggingEvent.getLevel(), Level.ERROR);
 		Assert.assertEquals(
 				loggingEvent.getMessage().toString(),
-				"SID:{http://service.error.be}SomeService Payload:<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>"
+				"SID:{http://service.error.be}SomeService Payload:<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
 						+ "<service:SomeService xmlns:service=\"http://service.error.be\"><FirstElement><FirstElementFirstChild>"
 						+ "val</FirstElementFirstChild></FirstElement><SecondElement>123</SecondElement></service:SomeService>");
 	}
